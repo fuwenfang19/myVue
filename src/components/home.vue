@@ -67,6 +67,60 @@
       </div>
     </section>
     <hr class="dividingLine">
+    <section>
+      <h2 class="sectionTitle">テクノロジー</h2>
+      <div class="skillsFluid">
+        <div class="skillsFluidCont">
+          <div>
+            <img src= '../images/cloud.jpeg' class="skillImg">
+            <h3 class="skillName">ＣＬＯＵＤ</h3>
+            <p>AWSのコンサルティング・構築</p>
+            <p>(EC2,S3,RDS,Route53等)</p>
+          </div>
+        </div>
+        <div class="skillsFluidCont">
+          <img src= '../images/mobile.jpeg' class="skillImg">
+          <h3 class="skillName">ＭＯＢＩＬＥ</h3>
+          <p>モバイルアプリケーション開発</p>
+          <p>（iOS、Android）</p>
+        </div>
+        <div class="skillsFluidCont">
+          <img src= '../images/java.png' class="skillImg">
+          <h3 class="skillName">ＪＡＶＡ</h3>
+          <p>より安全な大規模システム開発</p>
+          <p>(Java8,SpringBoot,Thymeleaf,Html5,Git等)</p>
+        </div>
+      </div>
+    </section>
+    <hr class="dividingLine">
+    <section>
+      <h2 class="sectionTitle">個人情報保護方針</h2>
+      <div class="informationFluid">
+        <p class="informationFluidTop">制定日 2021年7月10日</p>
+        <p class='informationFluidTop'>最終改正日 2021年7月10日</p>
+        <p class="informationFluidOCont">株式会社DeepCode（以下、「当社」という。）では、当社の主事業であるITソリューションサービスを行って行く上で、「個人情報」は、お客様にとっても、取り扱う当社にとっても重要な情報資産であり、確実に保護することは重要な責務であります。個人情報保護理念と自ら定めた行動規範に基づき、社会的使命を十分に認識し、本人の権利の保護、個人情報に関する法規制等を遵守致します。
+また、以下に示す方針を具現化するための個人情報保護マネジメントシステムを構築し、最新のＩＴ技術の動向、社会的要請の変化、経営環境の変動等を常に認識しながら、その継続的改善に、全社を挙げて取り組むことをここに宣言致します。</p>
+        <p class="informationFluidOCont">１． 当社は、適切な個人情報の取得・利用及び提供を行い、特定された利用目的の達成に必要な範囲を超えた個人情報の取扱いを行ないません。また、そのための措置を講じます。</p>
+        <p class="informationFluidOCont">２． 当社は個人情報の取扱いに関する法令、国が定める指針その他の規範を遵守致します。</p>
+        <p class="informationFluidOCont">３． 当社は個人情報の漏えい、滅失、き損などのリスクに対しては、合理的な安全対策を講じて防止すべく、事業の実情に合致した経営資源を注入し、個人情報のセキュリティ体制を継続的に向上させていきます。また、万一の際には速やかに是正措置を講じます。</p>
+        <p class="informationFluidOCont">４． 当社は個人情報取扱いに関する苦情及び相談に対しては、迅速かつ誠実に対応致します。</p>
+        <p class="informationFluidOCont">５． 個人情報保護マネジメントシステムは、当社を取り巻く環境の変化と実情を踏まえ、適時・適切に見直して継続的に改善をはかります。</p>
+        <p class="informationFluidTop">株式会社DeepCode 代表取締役社長 匡 文</p>
+        <p class='informationFluidTop'>以上</p>
+        <p class="informationFluidBottom">
+          <b>【個人情報保護方針に関するお問い合わせ先 兼 個人情報に関する苦情・相談窓口】</b>
+          <span>〒277-0005千葉県柏市柏六丁目4-24 コルメ柏Jルーム</span>
+          <span>株式会社DeepCode 個人情報に関するお問い合わせ窓口</span>
+          <span>メールアドレス：info@deepcode.co.jp ※特定電子メールはご遠慮ください</span>
+        </p>
+        <div class="informationFluidBottomLink">
+          <router-link to="/busineseeCont">＞個人情報の利用目的の公表</router-link>
+          <router-link to="/busineseeCont">＞保有個人データに関する事項の周知について</router-link>
+          <router-link to="/busineseeCont">＞保有個人データの開示等に関する手続き</router-link>
+        </div>
+      </div>
+    </section>
+    <hr class="dividingLine">
   </div>
 </template>
 
@@ -201,6 +255,60 @@ export default {
   margin-top: 20px;
   p{
     text-align: left;
+  }
+}
+.skillsFluid{
+  display: flex;
+  .skillsFluidCont{
+    flex: 1;
+    align-items: center;
+  }
+  .skillImg{
+    height: 140px;
+  }
+  .skillName{
+    text-align: center;
+    margin: 10px 0 10px 0;
+    font-weight: bold;
+  }
+  p{
+    color: #999;
+    text-align: center;
+  }
+}
+.informationFluid{
+  margin-left: 8%;
+  margin-right: 3%;
+  .informationFluidTop{
+    text-align: right;
+    margin:8px 0 10px 0;
+  }
+  .informationFluidOCont{
+    margin-bottom: 10px;
+    text-align: left;
+  }
+  .informationFluidBottom{
+    text-align: center;
+    font-size: 13px;
+    b{
+      font-weight: bold;
+    }
+    span{
+      display: block;
+      text-align: center;
+    }
+  }
+  .informationFluidBottomLink{
+    margin: 13px 0 15px 0;
+    a{
+      text-align: left;
+      display: block;
+      color: #4682B4;;
+      cursor: pointer;
+      text-decoration: underline;
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
   }
 }
 </style>
