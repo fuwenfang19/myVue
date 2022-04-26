@@ -1,7 +1,12 @@
 $blue: #3190e8;  
 $bc: #e4e4e4;
 $fc:#fff;
-
+body{
+	font-size: 14px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 20px;
+  color: #333333;
+}
 // 背景图片地址和大小
 @mixin bis($url) { 
 	background-image: url($url);

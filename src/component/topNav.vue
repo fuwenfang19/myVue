@@ -10,7 +10,7 @@
         </ul>
       </section>
       <section class="guide_item">
-        <span>事业内容</span>
+        <router-link to="/components/busineseeCont">事业内容</router-link>
       </section>
       <section class="guide_item">
         <span>招聘启示</span>
@@ -58,6 +58,9 @@ export default {
   .guide_item{
     padding: 10px 20px 10px;
     position: relative;
+    a {
+      color: #777;
+    }
     span {
       color: #777;
     }
@@ -86,7 +89,7 @@ export default {
     }
   }
   .nav .guide_item:hover {
-    span{
+    span ,a {
       color: #4682B4;
       cursor: default;
     }
