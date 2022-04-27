@@ -54,15 +54,23 @@ export default {
     font-size: 20px;
     color:#4682B4;
     text-shadow: 0 1px 0 #ffffff;
+    background-image: linear-gradient(to bottom, #ffffff, #f2f2f2);
+    background-repeat: repeat-x;
   }
   .guide_item{
     padding: 10px 20px 10px;
     position: relative;
+    background-image: linear-gradient(to bottom, #ffffff, #f2f2f2);
+    background-repeat: repeat-x;
     a {
       color: #777;
+      background-image: linear-gradient(to bottom, #ffffff, #f2f2f2);
+      background-repeat: repeat-x;
     }
     span {
       color: #777;
+      background-image: linear-gradient(to bottom, #ffffff, #f2f2f2);
+      background-repeat: repeat-x;
     }
     .qyqb{
       position:absolute;
