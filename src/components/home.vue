@@ -121,6 +121,62 @@
       </div>
     </section>
     <hr class="dividingLine">
+    <section>
+      <h2 class="sectionTitle">採用情報</h2>
+      <div class="messageFluid">
+        <p class="title">仲間大募集中！</p>
+        <table class="messageFluidTable">
+          <tbody>
+            <tr>
+              <td class="messageFluidTd01">募集職種</td>
+              <td class="messageFluidTd02">
+                <p>管理職（プロジェクトマネジャー、プロジェクトリーダー）</p>
+                <p>技術職（システムエンジニア、プログラマー）</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="messageFluidTd01">業務内容</td>
+              <td class="messageFluidTd02">
+                <p>WEBシステム開発</p>
+                <p>スマートフォンアプリ開発</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="messageFluidTd01">応募資格</td>
+              <td class="messageFluidTd02">
+                <p>＜未経験歓迎！＞</p>
+                <p>IT業界の経験は必要ナシ（充実の研修をご用意しています）。</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="messageFluidTd01">勤務地</td>
+              <td class="messageFluidTd02">
+                <p>東京都内または首都圏（千葉・神奈川・埼玉）</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="messageFluidTd01">勤務時間</td>
+              <td class="messageFluidTd02">
+                <p>9:30～18:30</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="messageFluidTd01">採用担当</td>
+              <td class="messageFluidTd02">
+                <p><a href= "mailto:recruit@deepcode.co.jp">recruit@deepcode.co.jp</a></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <hr class="dividingLine">
+    <section>
+      <div class="footer">
+        <span>©2021 DeepCode Co.,Ltd. All rights reserved.</span>
+        <span v-on:click="backTop" class="backTop">トップへ</span>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -134,7 +190,8 @@ export default {
   data () {
     return {
       currentIndex: 0,
-      timer: null,
+      imgtimer: null,
+      backTopTimer: null,
       slideImgList: [
         { image: require('../images/img01.png') },
         { image: require('../images/img02.png') },
@@ -154,13 +211,25 @@ export default {
       }
     },
    go () {
-    this.timer = setInterval (() => {
+    this.imgtimer = setInterval (() => {
        this.autoPlay ()
      }, 4000)
     },
    stop () {
-     clearInterval (this.timer)
-     this.timer = null
+     clearInterval (this.imgtimer)
+     this.imgtimer = null
+    },
+    backTop () {
+      let docTop = document.documentElement.scrollTop;
+      this.backTopTimer = setInterval (() => {
+        docTop = docTop-100;
+        document.documentElement.scrollTop = docTop;
+        //console.log(docTop)
+        if (docTop<=0){
+          clearInterval (this.backTopTimer)
+          this.backTopTimer = null
+        }
+      },20)
     }
   },
   created () {
@@ -311,4 +380,50 @@ export default {
     }
   }
 }
+.messageFluid{
+  margin-left: 8%;
+  margin-right: 3%;
+  .title{
+    text-align: center;
+    font-weight: bold;
+    font-size: 22px;
+  　margin: 15px 0 15px 0;
+  }
+  .messageFluidTable{
+    margin:0 auto;
+    font-size: 14px;
+  }
+  .messageFluidTd01{
+    padding-right: 8px;
+    font-weight: bold;
+    vertical-align: top;
+  }
+  .messageFluidTd02{
+    padding-left:8px;
+    text-align: left;
+    a{
+      color: #4682B4;;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+}
+.footer{
+  margin-left: 8%;
+  margin-right: 6%;
+  padding-bottom: 20px;
+  display: flex;
+  span{
+    flex: 1;
+    align-items:stretch ;
+    text-align: left;
+  }
+  .backTop{
+    text-align: right;
+    color: #4682B4;;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+
 </style>
