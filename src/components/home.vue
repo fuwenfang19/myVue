@@ -8,6 +8,9 @@
         </li>
       </transition-group>
     </section>
+    <section class="slide_display_phone">
+      <img src="../images/imgPhone01.png" class="slideImgPhone">
+    </section>
     <hr class="dividingLine">
     <section class="instruction">
       <h2 class="sectionTitle">メッセージ</h2>
@@ -47,9 +50,6 @@
       </div>
       <hr class="dividingLine">
       <div class="bsFluid bsFluid02">
-        <div class="bsFluidright bsFluid02Right">
-          <img src= '../images/bis02.jpeg' class="bisImg">
-        </div>
         <div class="bsFluidLeft bsFluid02Left">
           <div class="bsFluidLeftTop bsFluid02LeftTop">
             <h3 class="bsFluidLeftTopH3 bsFluid02LeftTopH3">クラウドコンピューティング</h3>
@@ -63,6 +63,9 @@
             <br>
             <p>弊社は主にAWS（Amazon Web Service）活用に関するコンサルティングを実施しています。 インフラの調達期間、拡張・縮小の迅速さ、セキュリティ、既存のデータセンター環境との連携の利便性など、自社サーバーでは難しかった多くのケースも AWSクラウドであれば解決することができます。</p>
           </div>
+        </div>
+        <div class="bsFluidright bsFluid02Right">
+          <img src= '../images/bis02.jpeg' class="bisImg">
         </div>
       </div>
     </section>
@@ -245,25 +248,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import '../style/mixin';
-.slide_display{
-  position: relative;
-  width: 100%;
-  height: 350px;
-  overflow: hidden;
-  .slide_ul{
-    width: 100%;
-    height: 100%;
-    .slide_li{
-      position:absolute;
-      width: 100%;
-      height: 100%;
-      img{
-      width: 100%;
-      height: 100%;
-      }
-    }
-  }
-}
 .carouselImag-enter-to {
   transition: all 2s ease;
   transform: translateX(0);
@@ -296,29 +280,91 @@ export default {
     text-align: left;
   }
 }
-.bsFluid{
-  display: flex;
-  margin-left: 8%;
-  .bsFluidLeftTop{
-    border-left:5px solid #e5e5e5;
-    small{
-      color: rgb(126, 107, 107);
-      display: block;
-      text-align: left;
+@media (max-width: 767px){
+  .slide_display{
+    display: none;
+  }
+  .slide_display_phone{
+    margin:0 10px;
+    max-width: 100%;
+    height: 100px;
+    overflow: hidden;
+    img{
+      width:100%;
+      height: 100px;
     }
   }
-  .bsFluidLeft{
-    flex: 2;
-    text-align: left;
-    padding:10px 15px 10px 0;
+   .bsFluid{
+     display: block;
+     margin-left: 8%;
+     margin-right: 3%;
+   }
+   .bsFluid .bsFluidright .bisImg{
+     width:400px;
+     height: auto;
+     max-width: 100%;
+   }
+   .skillsFluid{
+     display: block;
+     .skillsFluidCont{
+        margin-bottom: 15px;
+     }
+   }
+ }
+ @media ( min-width: 768px) {
+  .slide_display_phone{
+     display: none;
   }
-  .bsFluidright{
-    flex: 1;
-    .bisImg{
+  .slide_display{
+    position: relative;
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    .slide_ul{
       width: 100%;
+      height: 100%;
+      .slide_li{
+        position:absolute;
+        width: 100%;
+        height: 100%;
+        img{
+        width: 100%;
+        height: 100%;
+        }
+      }
     }
   }
-  margin-right: 3%;
+  .bsFluid{
+    display: flex;
+    margin-left: 8%;
+    .bsFluidLeftTop{
+      border-left:5px solid #e5e5e5;
+      small{
+        color: rgb(126, 107, 107);
+        display: block;
+        text-align: left;
+      }
+    }
+    .bsFluidLeft{
+      flex: 2;
+      text-align: left;
+      padding:10px 15px 10px 0;
+    }
+    .bsFluidright{
+      flex: 1;
+      .bisImg{
+        width: 100%;
+      }
+    }
+    margin-right: 3%;
+  }
+  .skillsFluid{
+     display: flex;
+    .skillsFluidCont{
+      flex: 1;
+      align-items: center;
+    }
+  }
 }
 .bsFluidLeftCont{
   margin-top: 20px;
@@ -327,11 +373,6 @@ export default {
   }
 }
 .skillsFluid{
-  display: flex;
-  .skillsFluidCont{
-    flex: 1;
-    align-items: center;
-  }
   .skillImg{
     height: 140px;
   }
@@ -425,5 +466,4 @@ export default {
     text-decoration: underline;
   }
 }
-
 </style>
