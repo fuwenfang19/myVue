@@ -285,7 +285,8 @@ export default {
     display: none;
   }
   .slide_display_phone{
-    width: 100%;
+    margin:0 10px;
+    max-width: 100%;
     height: 100px;
     overflow: hidden;
     img{
