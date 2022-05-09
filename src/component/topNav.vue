@@ -190,7 +190,8 @@ export default {
     height:auto;
   }
   .nav_mobile_hide{
-    height:0px
+    height:50px;
+    overflow: hidden;
   }
    .nav{
      display: none;
